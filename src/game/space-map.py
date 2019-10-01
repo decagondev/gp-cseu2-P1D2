@@ -42,5 +42,6 @@ class Space:
             print()
 
 # instantiate a space object
-
+s = Space(10, 10)
 # print the map
+s.printMap()
