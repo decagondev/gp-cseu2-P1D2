@@ -23,14 +23,31 @@ def centered_average(ints):
     sum = sum - smallest - largest
     # return sum / (len(ints) - 2)
     return int(sum / (len(ints) - 2))
+# import the stastistics module
+import statistics
+
+def centered_average_2(ints):
+    # sort the ints
+    ints.sort()
+
+    # return the mean of the ints list slice without the 2 ends
+    return int(statistics.mean(ints[1:-1]))
+
 
 a = centered_average([1, 2, 3, 4, 100]) # → 3
 b = centered_average([1, 1, 5, 5, 10, 8, 7]) # → 5
 c = centered_average([-10, -4, -2, -4, -2, 0]) # → -3
+d = centered_average_2([1, 2, 3, 4, 100]) # → 3
+e = centered_average_2([1, 1, 5, 5, 10, 8, 7]) # → 5
+f = centered_average_2([-10, -4, -2, -4, -2, 0]) # → -3
 
 print(a)
 print(b)
 print(c)
+print("--------------------")
+print(d)
+print(e)
+print(f)
 
 
 
