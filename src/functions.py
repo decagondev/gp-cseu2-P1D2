@@ -1,4 +1,6 @@
 # how to define a function
+# def someFunc(x):
+#     return x
 
 # define a doubling function that passes args by value
 
@@ -11,3 +13,4 @@
     # original list is modified
 
 # try out our functions
+# var1 = someFunc("Hello") # => "Hello"
