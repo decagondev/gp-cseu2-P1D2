@@ -57,6 +57,39 @@ class Space:
                     sys.stdout.write(f"{symbol} ")
             
             print()
+
+
+    # move ship function
+    def moveShip(self, dir):
+        # hold delta X and delta Y
+
+        # convert direction to delta x and delta y
+        
+        # if direction is "N"
+            # set delta Y to -1
+        # else if direction is "S"
+            # set delta Y to 1
+        # else if direction is "W":
+            # set delta X to -1
+        # else if direction is "E":
+            # set delta X to 1
+
+        # increment ship col by delta x
+        # increment ship row by delta y
+
+        # bounds checking
+
+        # if the ship to far col- set to zero
+        # otherwise if ship too far col+ set to bounds - 1
+
+         # if the ship to far row- set to zero
+        # otherwise if ship too far row+ set to bounds - 1
+
+
+
+
+
+        pass
 # instantiate a space object
 s = Space(10, 10)
 # print the map
