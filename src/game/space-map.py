@@ -12,7 +12,7 @@ class Space:
         self.space = [] # rows of space
 
         # iterate over the rows and add cols
-        for i in range(rows):
+        for _ in range(rows):
             newRow = ['.'] * cols # array of 'cols' '.'s
             # append the row to space
             self.space.append(newRow)
@@ -22,7 +22,7 @@ class Space:
         # work out 7% of map
 
         # iterate over stars
-        for i in range(starCount):
+        for _ in range(starCount):
             # random row star
             rowNum = random.randint(0, len(self.space) - 1)
             # random col star
@@ -31,10 +31,15 @@ class Space:
             self.space[rowNum][colNum] = '*'
 
     # print map function
+    def printMap(self):
         # iterate over space rows
+        for r in self.space:
             # iterate over space cols
+            for c in r:
                 # write the col
+                sys.stdout.write(f"{c} ")
             # print empty line
+            print()
 
 # instantiate a space object
 
