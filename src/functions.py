@@ -24,7 +24,14 @@ def mult2(lst):
 print(name) # => "dave"
 cap(name) # => "Dave" pass by val
 print(name) # => "dave"
+
+# mult
 n = 12
 print(n)
 print(mult(n))
 print(n)
+
+# mult2
+print(l) # => [1, 2, 3, 4]
+print(mult2(l)) # => None
+print(l) # [2, 4, 6, 8]
