@@ -1,4 +1,4 @@
-# Return the "centered" average of an array of ints, 
+# Return the "centered" average of a list of ints, 
 # which we'll say is the mean average of the values, 
 # except ignoring the largest and smallest values in the array. 
 
