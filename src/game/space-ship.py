@@ -62,35 +62,67 @@ class Space:
     # move ship function
     def moveShip(self, dir):
         # hold delta X and delta Y
+        dx = 0
+        dy = 0
 
         # convert direction to delta x and delta y
         
         # if direction is "N"
+        if dir == "N":
             # set delta Y to -1
+            dy = -1
         # else if direction is "S"
+        elif dir == "S":
             # set delta Y to 1
+            dy = 1
         # else if direction is "W":
+        elif dir == "W":
             # set delta X to -1
+            dx = -1
         # else if direction is "E":
+        elif dir == "E":
             # set delta X to 1
+            dx = 1
 
         # increment ship col by delta x
+        self.shipCol += dx
         # increment ship row by delta y
+        self.shipRow += dy
 
         # bounds checking
-
+    
         # if the ship to far col- set to zero
+        if self.shipCol < 0:
+            self.shipCol = 0
         # otherwise if ship too far col+ set to bounds - 1
+        elif self.shipCol >= self.cols:
+            self.shipCol = self.cols - 1
 
          # if the ship to far row- set to zero
+        if self.shipRow < 0:
+             self.shipRow = 0
         # otherwise if ship too far row+ set to bounds - 1
+        elif self.shipRow >= self.rows:
+            self.shipRow = self.rows - 1
 
-
-
-
-
-        pass
 # instantiate a space object
 s = Space(10, 10)
-# print the map
-s.printMap()
+
+# set a REPL
+
+    # print the map
+while True:
+    s.printMap()
+    # Take input
+    d = input("Direction (N,S,E,W): ")
+
+    # clean input
+    d = d.strip().upper()
+
+    # check for invalid input
+    if d not in ["N", "S", "E", "W"]:
+        continue
+
+    # move the ship
+    s.moveShip(d)
+
