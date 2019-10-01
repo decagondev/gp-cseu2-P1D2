@@ -14,7 +14,7 @@ class Space:
 
         # iterate over the rows and add cols
         for _ in range(rows):
-            newRow = ['.'] * cols # array of 'cols' '.'s
+            newRow = ["."] * cols # array of 'cols' '.'s
             # append the row to space
             self.space.append(newRow)
         
@@ -29,28 +29,34 @@ class Space:
             # random col star
             colNum = random.randint(0, len(self.space) - 1)
             # add the '*' to space at row and col
-            self.space[rowNum][colNum] = '*'
+            self.space[rowNum][colNum] = "*"
         
         # Add the ship
+        self.shipRow = rows // 2
+        self.shipCol = cols // 2
 
         # Kill any star at the ships location
+        self.space[self.shipRow][self.shipCol] = "."
 
 
     # print map function
     def printMap(self):
         # iterate over space rows
-        for r in self.space:
+        for r in range(self.rows):
             # iterate over space cols
-            for c in r:
+            for c in range(self.cols):
                 # check if the ship is in the grid space
+                if r == self.shipRow and c == self.shipCol:
                     # draw the ship here
+                    sys.stdout.write("Y ")
                 # otherwise
+                else:
                     # create a symbol from data in space list
+                    symbol = self.space[r][c]
                     # write the col
-
-            # print empty line
+                    sys.stdout.write(f"{symbol} ")
+            
             print()
-
 # instantiate a space object
 s = Space(10, 10)
 # print the map
